@@ -38,3 +38,11 @@ gradle clean specialForm
 ```bash
 gradle allureServe
 ```
+
+### Сборку можно запустить с параметрами:
+```bash
+gradle clean test -Dbrowser=${browser} -DbrowserSize=${browser_size}
+```
+> <code>browser</code> – браузер, в котором будут выполняться тесты (_по умолчанию - <code>chrome</code>_).
+>
+> <code>browser_size</code> – размер окна браузера, в котором будут выполняться тесты (_по умолчанию - <code>1920x1080</code>_).
