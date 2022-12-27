@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class SpecialForm {
 
 
-    private static final SelenideElement
+    private final SelenideElement
             formParticipation = $("#signupFormParticipation"),
             specialFormCheckBox = $("[name=\"is_invalid\"]"),
             phoneInput = $("#id_contact_phone_number"),
@@ -22,7 +22,7 @@ public class SpecialForm {
             additionalFieldsForInvalids = $(".additional-fields-for-invalids"),
             dragDropFilesUl = $(".dragdrop-files-list");
 
-    private final static ElementsCollection
+    private final ElementsCollection
             signupFormParticipationElements = $$("#signupFormParticipation option");
 
     public SpecialForm setFormParticipation() {

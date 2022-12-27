@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class SignInModal {
 
-    private final static SelenideElement
+    private final SelenideElement
             openModalButton = $(".header [data-target=\"#signinModal\"]"),
             signInEmailInput = $("#signinEmail"),
             signInPasswordInput = $("#signinPassword"),

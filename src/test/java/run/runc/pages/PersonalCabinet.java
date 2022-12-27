@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class PersonalCabinet {
 
-    private final static SelenideElement
+    private final SelenideElement
             userNameInHeader = $("#panel .header-profile span"),
             profileSettingsSaveButton = $(".profile-settings__submit button");
 
