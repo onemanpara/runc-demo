@@ -7,6 +7,18 @@
 > :heavy_check_mark: [Реализованы проверки](#bookmark_tabs-реализованы-проверки)
 >
 > :heavy_check_mark: [Запуск тестов из терминала](#computer-Запуск-тестов-из-терминала)
+> 
+> :heavy_check_mark: [Запуск тестов в Jenkins](#-запуск-тестов-в-jenkins)
+>
+> :heavy_check_mark: [Отчет о результатах тестирования в Allure Report](#-отчет-о-результатах-тестирования-в-allure-report)
+>
+> :heavy_check_mark: [Интеграция с Allure TestOps](#-интеграция-с-allure-testops)
+>
+> :heavy_check_mark: [Интеграция с Jira](#-интеграция-с-jira)
+>
+> :heavy_check_mark: [Уведомления в Telegram с использованием бота](#-уведомления-в-telegram-с-использованием-бота)
+>
+> :heavy_check_mark: [Пример запуска теста в Selenoid](#-пример-запуска-теста-в-selenoid)
 
 ## :technologist: Технологии и инструменты
 
