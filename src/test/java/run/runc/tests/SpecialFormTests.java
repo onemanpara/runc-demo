@@ -10,7 +10,7 @@ import run.runc.pages.PersonalCabinetPage;
 
 import static io.qameta.allure.Allure.step;
 
-public class SpecialFormComponentTests extends BaseTest {
+public class SpecialFormTests extends BaseTest {
 
     LoginAndRegistrationApi loginAndRegistrationApi = new LoginAndRegistrationApi();
     SpecialFormComponent specialFormComponent = new SpecialFormComponent();

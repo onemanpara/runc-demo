@@ -17,12 +17,12 @@ public class LoginAndRegistrationApi {
     public static UserDataConfig userDataConfig = ConfigFactory.create(UserDataConfig.class);
     protected Map<String, String> userCookie;
 
-    private Map<String, String> getAuthCookie() {
+    public Map<String, String> getAuthCookie() {
         return this.userCookie =
                 given()
                         .contentType(URLENC)
                         .log().all()
-                        .param("userEmail", userDataConfig.userEmail())
+                        .param("username", userDataConfig.userEmail())
                         .param("password", userDataConfig.password())
                         .when()
                         .post("https://runc.run/login/")

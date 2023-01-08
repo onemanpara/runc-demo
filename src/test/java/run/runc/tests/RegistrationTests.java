@@ -19,7 +19,6 @@ public class RegistrationTests extends BaseTest {
 
     @Test
     @DisplayName("Регистрация нового пользователя через UI")
-    @Tag("registration")
     void registrationPositiveTest() {
         step("Открываем главную страницу", () -> {
             mainPage.openPage();

@@ -72,16 +72,6 @@ tasks.withType(Test) {
     }
 }
 
-task authUI(type: Test) {
-    useJUnitPlatform {
-        includeTags("authUI")
-    }
-}
-task registration(type: Test) {
-    useJUnitPlatform {
-        includeTags("registration")
-    }
-}
 task specialForm(type: Test) {
     useJUnitPlatform {
         includeTags("specialForm")

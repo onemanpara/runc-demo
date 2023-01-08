@@ -60,9 +60,7 @@ public class SpecialFormComponent {
 
     public SpecialFormComponent cancelSpecialForm() {
         specialFormCheckboxClick();
-        modalSpecialFormCancelConfirm.shouldBe(attribute
-                ("style", "padding-right: 17px; display: block;")
-        );
+        modalSpecialFormCancelConfirm.$(".modal-confirm__text").shouldBe(visible);
         sleep(500);
         cancelSpecialFormButton.click();
         return this;
