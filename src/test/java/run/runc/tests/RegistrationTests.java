@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import run.runc.components.SignInModal;
 import run.runc.helpers.DataGenerator;
 import run.runc.pages.MainPage;
-import run.runc.pages.PersonalCabinet;
+import run.runc.pages.PersonalCabinetPage;
 
 import static io.qameta.allure.Allure.step;
 
@@ -15,7 +15,7 @@ public class RegistrationTests extends BaseTest {
     SignInModal signInModal = new SignInModal();
     MainPage mainPage = new MainPage();
     DataGenerator dataGenerator = new DataGenerator();
-    PersonalCabinet personalCabinet = new PersonalCabinet();
+    PersonalCabinetPage personalCabinetPage = new PersonalCabinetPage();
 
     @Test
     @DisplayName("Регистрация нового пользователя через UI")
@@ -46,7 +46,7 @@ public class RegistrationTests extends BaseTest {
             signInModal.registrationButtonClick();
         });
         step("Проверяем, что регистрация прошла", () -> {
-            personalCabinet.checkUserNameInHeader(dataGenerator.getFirstName(), dataGenerator.getSurname());
+            personalCabinetPage.checkUserNameInHeader(dataGenerator.getFirstName(), dataGenerator.getSurname());
         });
     }
 }

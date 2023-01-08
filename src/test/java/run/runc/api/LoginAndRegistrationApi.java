@@ -12,7 +12,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.URLENC;
 
-public class LoginAndRegistration {
+public class LoginAndRegistrationApi {
 
     public static UserDataConfig userDataConfig = ConfigFactory.create(UserDataConfig.class);
     protected Map<String, String> userCookie;

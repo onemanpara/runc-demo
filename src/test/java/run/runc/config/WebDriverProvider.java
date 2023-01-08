@@ -15,7 +15,7 @@ public class WebDriverProvider {
         Configuration.baseUrl = config.baseUrl();
         String configSource = config.remoteAddress();
         if (configSource != null) {
-            Configuration.remote = config.baseUrl();
+            Configuration.remote = configSource;
             DesiredCapabilities capabilities = new DesiredCapabilities();
             Configuration.browserCapabilities = capabilities;
             capabilities.setCapability("enableVNC", true);

@@ -3,37 +3,37 @@ package run.runc.tests;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import run.runc.api.LoginAndRegistration;
-import run.runc.components.SpecialForm;
+import run.runc.api.LoginAndRegistrationApi;
+import run.runc.components.SpecialFormComponent;
 import run.runc.helpers.DataGenerator;
-import run.runc.pages.PersonalCabinet;
+import run.runc.pages.PersonalCabinetPage;
 
 import static io.qameta.allure.Allure.step;
 
-public class SpecialFormTests extends BaseTest {
+public class SpecialFormComponentTests extends BaseTest {
 
-    LoginAndRegistration loginAndRegistration = new LoginAndRegistration();
-    SpecialForm specialForm = new SpecialForm();
+    LoginAndRegistrationApi loginAndRegistrationApi = new LoginAndRegistrationApi();
+    SpecialFormComponent specialFormComponent = new SpecialFormComponent();
     DataGenerator dataGenerator = new DataGenerator();
-    PersonalCabinet personalCabinet = new PersonalCabinet();
+    PersonalCabinetPage personalCabinetPage = new PersonalCabinetPage();
 
     @Test
     @DisplayName("Отмена специальных условий на форме настроек")
     @Tag("specialForm")
     void formCanBeCancelTest() {
         step("Регистрируем нового пользователя с чек-боксом специальных условий", () -> {
-            loginAndRegistration.registerUserWithSpecialFormCheckBox();
+            loginAndRegistrationApi.registerUserWithSpecialFormCheckBox();
         });
         step("Авторизуемся под зарегистрированным пользователем (подкладываем куки)", () -> {
-            loginAndRegistration.logInApi(loginAndRegistration.getUserCookie());
+            loginAndRegistrationApi.logInApi(loginAndRegistrationApi.getUserCookie());
         });
         step("Проверяем, что чек-бокс спец. условий установлен", () -> {
-            specialForm.checkSpecialFormCheckBoxSelected();
+            specialFormComponent.checkSpecialFormCheckBoxSelected();
         });
         step("Отменяем форму специальных условий");
-        specialForm.cancelSpecialForm();
+        specialFormComponent.cancelSpecialForm();
         step("Проверяем, что чек-бокс спец. условий не установлен", () -> {
-            specialForm.checkSpecialFormCheckBoxNotSelected();
+            specialFormComponent.checkSpecialFormCheckBoxNotSelected();
         });
     }
 
@@ -42,19 +42,19 @@ public class SpecialFormTests extends BaseTest {
     @Tag("specialForm")
     void requestSpecialFormTest() {
         step("Регистрируем нового пользователя без чек-бокса специальных условий", () -> {
-            loginAndRegistration.registerSimpleUser();
+            loginAndRegistrationApi.registerSimpleUser();
         });
         step("Авторизуемся под зарегистрированным пользователем (подкладываем куки)", () -> {
-            loginAndRegistration.logInApi(loginAndRegistration.getUserCookie());
+            loginAndRegistrationApi.logInApi(loginAndRegistrationApi.getUserCookie());
         });
         step("Заполняем форму специальных условий", () -> {
-            specialForm.completeSpecialForm(dataGenerator.getPhoneNumber(), "testfile.jpg");
+            specialFormComponent.completeSpecialForm(dataGenerator.getPhoneNumber(), "testfile.jpg");
         });
         step("Сохраняем изменения профиля", () -> {
-            personalCabinet.profileSettingsSaveButtonClick();
+            personalCabinetPage.profileSettingsSaveButtonClick();
         });
         step("Проверяем, что чек-бокс включен, загруженный файл не отображается в списке", () -> {
-            specialForm
+            specialFormComponent
                     .checkSpecialFormCheckBoxSelected()
                     .checkDragDropFilesUlIsEmpty()
                     .checkPhoneNumberInSpecialForm(dataGenerator.getPhoneNumber());

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import run.runc.components.SignInModal;
 import run.runc.pages.MainPage;
-import run.runc.pages.PersonalCabinet;
+import run.runc.pages.PersonalCabinetPage;
 
 import static io.qameta.allure.Allure.step;
 
@@ -13,7 +13,7 @@ public class AuthTests extends BaseTest {
 
     SignInModal signInModal = new SignInModal();
     MainPage mainPage = new MainPage();
-    PersonalCabinet personalCabinet = new PersonalCabinet();
+    PersonalCabinetPage personalCabinetPage = new PersonalCabinetPage();
 
     @Tag("authUI")
     @Test
@@ -34,8 +34,7 @@ public class AuthTests extends BaseTest {
             signInModal.signInButtonClick();
         });
         step("Проверяем, что авторизация прошла", () -> {
-            personalCabinet.checkUserNameInHeader(userDataConfig.username(), userDataConfig.userSurname());
+            personalCabinetPage.checkUserNameInHeader(userDataConfig.username(), userDataConfig.userSurname());
         });
-        System.out.println("");
     }
 }

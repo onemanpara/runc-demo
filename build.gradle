@@ -37,12 +37,12 @@ allure {
 }
 
 dependencies {
-    implementation (
+    implementation(
             "org.assertj:assertj-core:$assertJVersion",
             "org.junit.jupiter:junit-jupiter:5.9.0",
             "io.rest-assured:rest-assured:5.3.0",
             "org.slf4j:slf4j-simple:$slf4jVersion",
-            "com.codeborne:selenide:6.10.3",
+            "com.codeborne:selenide:6.11.0",
             "org.aeonbits.owner:owner:1.0.12",
             "io.qameta.allure:allure-selenide:2.20.0",
             "com.github.javafaker:javafaker:1.0.2",
@@ -54,6 +54,16 @@ tasks.withType(Test) {
     useJUnitPlatform()
     systemProperties(System.getProperties())
 
+    if (System.getProperty("threads") != null) {
+        systemProperties += [
+                'junit.jupiter.execution.parallel.enabled'                 : true,
+                'junit.jupiter.execution.parallel.mode.default'            : 'concurrent',
+                'junit.jupiter.execution.parallel.mode.classes.default'    : 'concurrent',
+                'junit.jupiter.execution.parallel.config.strategy'         : 'fixed',
+                'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads").toInteger()
+        ]
+    }
+
     testLogging {
         lifecycle {
             events "started", "skipped", "failed", "standard_error", "standard_out"
@@ -63,17 +73,17 @@ tasks.withType(Test) {
 }
 
 task authUI(type: Test) {
-    useJUnitPlatform{
+    useJUnitPlatform {
         includeTags("authUI")
     }
 }
 task registration(type: Test) {
-    useJUnitPlatform{
+    useJUnitPlatform {
         includeTags("registration")
     }
 }
 task specialForm(type: Test) {
-    useJUnitPlatform{
+    useJUnitPlatform {
         includeTags("specialForm")
     }
 }

@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class SpecialForm {
+public class SpecialFormComponent {
 
 
     private final SelenideElement
@@ -25,13 +25,13 @@ public class SpecialForm {
     private final ElementsCollection
             signupFormParticipationElements = $$("#signupFormParticipation option");
 
-    public SpecialForm setFormParticipation() {
+    public SpecialFormComponent setFormParticipation() {
         int elementsSource = signupFormParticipationElements.size();
         formParticipation.selectOption(ThreadLocalRandom.current().nextInt(0, elementsSource));
         return this;
     }
 
-    public SpecialForm setPhone(String phone) {
+    public SpecialFormComponent setPhone(String phone) {
         phoneInput.setValue(phone);
         return this;
     }
@@ -44,7 +44,7 @@ public class SpecialForm {
         documentsUploadInput.uploadFromClasspath("img/" + fileName);
     }
 
-    public SpecialForm completeSpecialForm(String phone, String fileName) {
+    public SpecialFormComponent completeSpecialForm(String phone, String fileName) {
         specialFormCheckboxClick();
         setFormParticipation();
         setPhone(phone);
@@ -52,13 +52,13 @@ public class SpecialForm {
         return this;
     }
 
-    public SpecialForm checkSpecialFormCheckBoxSelected() {
+    public SpecialFormComponent checkSpecialFormCheckBoxSelected() {
         specialFormCheckBox.shouldHave(attribute("checked"));
         return this;
     }
 
 
-    public SpecialForm cancelSpecialForm() {
+    public SpecialFormComponent cancelSpecialForm() {
         specialFormCheckboxClick();
         modalSpecialFormCancelConfirm.shouldBe(attribute
                 ("style", "padding-right: 17px; display: block;")
@@ -68,18 +68,18 @@ public class SpecialForm {
         return this;
     }
 
-    public SpecialForm checkSpecialFormCheckBoxNotSelected() {
+    public SpecialFormComponent checkSpecialFormCheckBoxNotSelected() {
         additionalFieldsForInvalids.shouldNotBe(visible);
         modalSpecialFormCancelConfirm.$(byText("Вы уверены, что хотите убрать статус «Инвалидность»?")).shouldNotBe(visible);
         return this;
     }
 
-    public SpecialForm checkPhoneNumberInSpecialForm(String phoneNumber) {
+    public SpecialFormComponent checkPhoneNumberInSpecialForm(String phoneNumber) {
         phoneInput.shouldHave(attribute("value", phoneNumber));
         return this;
     }
 
-    public SpecialForm checkDragDropFilesUlIsEmpty() {
+    public SpecialFormComponent checkDragDropFilesUlIsEmpty() {
         dragDropFilesUl.shouldNotBe(visible);
         return this;
     }

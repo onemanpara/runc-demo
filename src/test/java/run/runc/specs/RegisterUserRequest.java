@@ -10,10 +10,9 @@ import static run.runc.helpers.CustomApiListener.withCustomTemplates;
 
 
 public class RegisterUserRequest {
-    static DataGenerator userWithSpecialForm = new DataGenerator();
-    static DataGenerator userWithoutSpecialForm = new DataGenerator();
 
     public static RequestSpecification registerUserWithSpecialFormRequest() {
+        DataGenerator userWithSpecialForm = new DataGenerator();
         RestAssured.baseURI = "https://runc.run/";
         RestAssured.basePath = "register/";
         return given()
@@ -40,6 +39,7 @@ public class RegisterUserRequest {
     }
 
     public static RequestSpecification registerSimpleUser() {
+        DataGenerator userWithoutSpecialForm = new DataGenerator();
         RestAssured.baseURI = "https://runc.run/";
         RestAssured.basePath = "register/";
         return given()

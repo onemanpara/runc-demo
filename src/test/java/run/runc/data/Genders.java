@@ -18,7 +18,7 @@ public enum Genders {
     }
 
     private static final List<Genders> VALUES =
-            Collections.unmodifiableList(Arrays.asList(values()));
+            List.of(values());
     private static final int SIZE = VALUES.size();
     private static final Random RANDOM = new Random();
 
