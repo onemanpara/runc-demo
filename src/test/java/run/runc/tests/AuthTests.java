@@ -1,7 +1,6 @@
 package run.runc.tests;
 
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import run.runc.api.LoginAndRegistrationApi;
 import run.runc.components.SignInModal;
@@ -16,7 +15,7 @@ public class AuthTests extends BaseTest {
     MainPage mainPage = new MainPage();
     PersonalCabinetPage personalCabinetPage = new PersonalCabinetPage();
     LoginAndRegistrationApi loginAndRegistrationApi = new LoginAndRegistrationApi();
-    
+
     @Test
     @DisplayName("Авторизация через UI")
     void uiPositiveAuth() {

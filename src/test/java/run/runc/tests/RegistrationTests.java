@@ -1,7 +1,6 @@
 package run.runc.tests;
 
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import run.runc.components.SignInModal;
 import run.runc.helpers.DataGenerator;

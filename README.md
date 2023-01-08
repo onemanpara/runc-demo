@@ -62,7 +62,7 @@
 >- [x] *Возможность отправить заявку на специальную форму (с предварительной регистрацией и авторизацией по API)*
 >- [x] *Возможность отменить заявку на специальную форму (с предварительной регистрацией и авторизацией по API*
 >- [x] *Наличие ошибок в консоли браузера*
->- [x] *Смена локали сайта*
+>- [x] *Смена локали сайта (параметризованный тест)*
 
 ## :computer: Запуск тестов из терминала
 
@@ -95,6 +95,8 @@ gradle clean test -Dbrowser=${browser} -DbrowserSize=${browser_size} -DmessageTe
 > <code>messageText</code> – сообщение для уведомления в Telegram (_по умолчанию в Jenkins установлено сообщение - <code>prod</code>_).
 >
 > <code>threads</code> - кол-во потоков для многопоточного запуска
+>
+> <code>remoteAddress</code> - адрес Selenoid (_по умолчанию в Jenkins создаётся <code>property-файл</code> с данным адресом_)
 
 
 ## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/15-onemanpara-hw27/)
