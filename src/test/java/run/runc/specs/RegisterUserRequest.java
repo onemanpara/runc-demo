@@ -25,7 +25,7 @@ public class RegisterUserRequest {
                 .param("month", userWithSpecialForm.getMonthOfBirthday())
                 .param("year", userWithSpecialForm.getBirthdayYear())
                 .param("country_of_citizenship", userWithSpecialForm.getCitizenship())
-                .param("gender", userWithSpecialForm.getGender().getGenderValue())
+                .param("gender", userWithSpecialForm.getGender().getValue())
                 .param("is_invalid", "on")
                 .param("password1", userWithSpecialForm.getPasswordForSingUp())
                 .param("password2", userWithSpecialForm.getPasswordForSingUp())
@@ -34,7 +34,7 @@ public class RegisterUserRequest {
                 .param("disability_type", "1")
                 .param("contact_phone_code", userWithSpecialForm.getCitizenship())
                 .param("contact_phone_number", userWithSpecialForm.getPhoneNumber())
-                .param("mailings_language", userWithSpecialForm.getGender().getGenderValue())
+                .param("mailings_language", userWithSpecialForm.getGender().getValue())
                 .param("agreement_is_accepted", "on");
     }
 
@@ -52,14 +52,14 @@ public class RegisterUserRequest {
                 .param("month", userWithoutSpecialForm.getMonthOfBirthday())
                 .param("year", userWithoutSpecialForm.getBirthdayYear())
                 .param("country_of_citizenship", userWithoutSpecialForm.getCitizenship())
-                .param("gender", userWithoutSpecialForm.getGender().getGenderValue())
+                .param("gender", userWithoutSpecialForm.getGender().getValue())
                 .param("password1", userWithoutSpecialForm.getPasswordForSingUp())
                 .param("password2", userWithoutSpecialForm.getPasswordForSingUp())
                 .param("email", userWithoutSpecialForm.getEmailForSignUp())
                 .param("documents", "")
                 .param("disability_type", "1")
                 .param("contact_phone_code", userWithoutSpecialForm.getCitizenship())
-                .param("mailings_language", userWithoutSpecialForm.getGender().getGenderValue())
+                .param("mailings_language", userWithoutSpecialForm.getGender().getValue())
                 .param("agreement_is_accepted", "on");
     }
 }
