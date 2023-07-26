@@ -101,7 +101,7 @@ gradle clean test -Dbrowser=${browser} -DbrowserSize=${browser_size} -DmessageTe
 > <code>remoteAddress</code> - адрес Selenoid (_по умолчанию в Jenkins создаётся <code>property-файл</code> с данным адресом_)
 
 
-## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/15-onemanpara-hw27/)
+## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/Students/job/15-onemanpara-hw27/)
 
 *Для запуска сборки необходимо указать значения параметров и нажать кнопку <code><strong>*Собрать*</strong></code>.*
 
@@ -117,7 +117,7 @@ Report*</strong></code>, кликнув по которому, откроетс�
   <img src="images/screens/Jenkins2.jpg" alt="Jenkins2" width="1000">
 </p>
 
-## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/15-onemanpara-hw27/allure/)
+## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/Students/job/15-onemanpara-hw27/allure/)
 
 ### :pushpin: Общая информация
 
